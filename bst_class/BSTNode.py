@@ -35,8 +35,14 @@ class Node:
         return self.left and self.right
 
     def replaceNodeData(self, key, value, left, right):
-        # TODO: Implement this
-        pass
+        self.key = key
+        self.value = value
+        self.left = left
+        self.right = right
+        if self.hasLeftChild():
+            self.left.parent = self
+        if self.hasRightChild():
+            self.right.parent = self
 
     def findMin(self):
         curr = self
